@@ -1,0 +1,147 @@
+{% extends 'base.jinja' %}
+
+{% block title %}
+Questionare Test - ASD Screening
+{% endblock %}
+{% block content %}
+<div class="center">
+    <h1>Tes Kuesioner Diagnosa Autisme</h1>
+    <form action="{{ url_for('site.result') }}" accept-charset="utf-8" method="post">
+        <h3>Data Diri</h3>
+        <div class="card">
+            <div class="form-check">
+            <div class="nama">
+                <h2>Nama</h2>
+                <input type="text" class="form-control" placeholder="Nama" id="name" name="name" required>
+            </div>
+            </div>
+            <div class="data-diri">
+                <div class="data">
+                    {# Jenis Kelamin #}
+                    <div class="form-check">
+                        <h2 class="atas">Jenis Kelamin</h2>
+                        <div class="flex">
+                            <li>
+                                <label class="radio" for="jk1">
+                                <input type="radio" required id="jk1" name="sex" value="1">
+                                Laki-laki </label>
+                            </li>
+                            <li>
+                                <label class="radio" for="jk2">
+                                <input type="radio" required id="jk2" name="sex" value="0">
+                                Perempuan </label>
+                            </li>
+                        </div>
+                    </div>
+                    {# Kelompok Etnik #}
+                    <div class="form-check">
+                        <h2>Kelompok etnik</h2>
+                        <select name="ethnicity" id="ethnicity" class="form-select" aria-label="Default select example" required>
+                            <option value="">Pilih kelompok etnik</option>
+                            <option value="0">Hispanic</option>
+                            <option value="1">Latino</option>
+                            <option value="2">Native indian</option>
+                            <option value="4">Pacifica</option>
+                            <option value="5">White european</option>
+                            <option value="6">Asian</option>
+                            <option value="7">Black</option>
+                            <option value="8">Middle eastern</option>
+                            <option value="9">Mixed</option>
+                            <option value="10">South asian</option>
+                            <option value="3">Lainnya</option>
+                        </select>
+                    </div>
+                    {# Penyakit Kuning #}
+                    <div class="form-check">
+                        <h2>Pernah terkena penyakit kuning?</h2>
+                        <div class="flex">
+                            <li>
+                                <label class="radio" for="pk1">
+                                <input type="radio" required id="pk1" name="jaundice" value="1">
+                                Pernah</label>
+                            </li>
+                            <li>
+                                <label class="radio" for="pk2">
+                                <input type="radio" required id="pk2" name="jaundice" value="0">
+                                Tidak pernah </label>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <div class="data">
+                    {# Ada keluarga dengan ASD? #}
+                    <div class="form-check">
+                        <h2 class="atas">Ada keluarga dengan ASD?</h2>
+                        <div class="flex">
+                            <li>
+                                <label class="radio" for="asd1">
+                                <input type="radio" required id="asd1" name="family_mem_with_asd" value="1">
+                                Ya </label>
+                            </li>
+                            <li>
+                                <label class="radio" for="asd2">
+                                <input type="radio" required id="asd2" name="family_mem_with_asd" value="0">
+                                Tidak </label>
+                            </li>
+                        </div>
+                    </div>
+                    {# Kelompok assigner #}
+                    <div class="form-check">
+                        <h2>Assigner</h2>
+                        <select name="assigner" id="assigner" class="form-select" aria-label="Default select example" required>
+                            <option value="">Pilih assigner</option>
+                            <option value="0">Family member</option>
+                            <option value="1">Health care professional</option>
+                            <option value="2">Lainnya</option>
+                            <option value="3">Diri sendiri</option>
+                        </select>
+                    </div>
+                    {# Penyakit Kuning #}
+                    <div class="form-check">
+                        <h2>Umur (bulan)</h2>
+                        <div class="flex">
+                            <li>
+                                <label class="radio" for="umur1">
+                                <input type="radio" required id="age0" name="age" value="0">
+                                0-12</label>
+                            </li>
+                            <li>
+                                <label class="radio" for="umur2">
+                                <input type="radio" required id="age1" name="age" value="1">
+                                13-23 </label>
+                            </li>
+                            <li>
+                                <label class="radio" for="umur3">
+                                <input type="radio" required id="age2" name="age" value="2">
+                                24-36 </label>
+                            </li>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <h3>Kuesioner</h3>
+        {% for i in range(questions|length) %}
+            <div class="card">
+                <div class="form-check">
+                    <h2>{{ i+1 }}. {{ questions[i][0]['txt'] }}</h2>
+                    {% for j in range(5) %}
+                        <li>
+                            <label class="radio" for="{{ questions[i][j+1]['id'] }}">
+                            <input type="radio" required id="{{ questions[i][j+1]['id'] }}" name="{{ questions[i][0]['id'] }}" value="{{ j+1 }}">
+                            {{ questions[i][j+1]['txt'] }} </label>
+                        </li>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+        <div class="content has-text-centered mt-5">
+            <p><input class="btn" type="submit" name="btnSubmit" value="Lihat Hasilnya"></p>
+        </div>
+    </form>
+</div>
+{% endblock %}

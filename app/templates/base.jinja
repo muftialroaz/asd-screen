@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% block head %}
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        
+        <link rel="icon" href="/static/img/icon.svg">
+
+		<!-- Bootstrap CSS -->
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+			crossorigin="anonymous"
+		/>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+		<!-- Main Stylesheet -->
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='other.css') }}">
+
+		<title>{% block title %}{% endblock %}</title>
+		{% endblock %}
+	</head>
+	<body>
+		<div class="wrapper">
+            <!-- Start of Desktop Navigation -->
+            <nav class="desktop-nav">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/static/img/Logo.png" alt="">
+                    </a>
+                </div>
+
+                <div class="menu-items">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="about">About</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('site.test_page') }}" class="btn">Ikuti Tes</a>
+                    </li>
+                </div>
+            </nav>
+            <!-- End of Desktop Navigation -->
+
+            <!-- Start of Hero Section -->
+            <div class="hero-container">
+                {% block content %} {% endblock %}
+            </div>
+            <!-- End of Hero Section -->
+        </div>
+
+        <footer>
+            <div class="wrapper">
+                <div class="footer-container">
+
+                    <div class="asdfoot">
+                        <a href="/">
+                            <img src="/static/img/LogoFoot.png" alt="" />
+                        </a>
+                    </div>
+
+                    <div class="csipb">
+                        <a href="https://cs.ipb.ac.id">
+                            <img src="/static/img/csipb.png" alt="" />
+                        </a>
+                    </div>
+
+                    <div class="footer-nav">
+                        <h3>Made by:</h3>
+                        <ul>
+                            <li><a href="https://www.instagram.com/rizhaaf/">Rizha Alfajri</a> -
+                                <a href="https://www.instagram.com/muftialroaz/">Mufti Alfarokhul Azam</a></li>
+                            <li><a href="https://www.instagram.com/elsam219/">Elia Samuel</a> -
+                                <a href="https://www.instagram.com/fahrezahafiz/">Fahreza Ikhsan Hafiz</a></li>
+                            <li><a href="https://www.instagram.com/julchristoper_/">Julius Christoper Siswanto</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+		<!-- Optional JavaScript -->
+		{# <script>
+			document.addEventListener('click', function (event) {
+				if (!event.target.matches('#not-implemented-yet')) return;
+				event.preventDefault();
+				alert("Not Implemented yet !");
+			}, false);
+		</script>  #}
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script
+			src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous"
+		></script>
+
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js">
+		</script>
+	</body>
+</html>

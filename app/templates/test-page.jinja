@@ -1,0 +1,42 @@
+{% extends 'base.jinja' %}
+
+{% block title %}
+Test Option - ASD Screening
+{% endblock %}
+
+{% block content %}
+{# CSS from other.css #}
+
+
+<div class="center">
+<h1>Pilih Opsi Tes</h1>
+</div>
+
+    <div class="opsi-test">
+        <div class="card" style="width: 18rem;">
+            <img src="/static/img/childAva.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Tes Foto</h5>
+                <p class="card-text">Melakukan tes autisme melalui foto anak yang diupload.</p>
+                <div style="text-align: center">
+                    <a href="{{ url_for('site.image_test') }}" class="btn btn-primary text-center">Pilih</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="/static/img/Question.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Tes Kuesioner</h5>
+                <p class="card-text">Mengisi pertanyaan mengenai karakteristik dan kebiasaan anak.</p>
+                <div style="text-align: center">
+                    <a href="{{ url_for('site.questionare_test') }}" class="btn btn-primary">Pilih</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

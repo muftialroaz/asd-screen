@@ -1,0 +1,259 @@
+/* Colors */
+
+:root {
+    --dark-color: #1D2D55;
+    --light-color: #FEFEFE;
+    --blue-color: #0085F5;
+    --cyan-color: #41EAD4;
+    --text-color: #545454;
+
+    --blue-hover-color: #0067BD;
+    --cyan-hover-color: #6ef3e1;
+}
+p {
+    text-align: center;
+}
+
+.hasil p ,
+.about p
+{
+    color: var(--text-color);
+    text-align: justify;
+}
+
+.about p {
+    font-size: 16px;
+    font-weight: medium;
+}
+
+.hasil .testlagi {
+    margin-top: 100px;
+    text-align: center;
+
+}
+
+/* Hero Section */
+
+.hero-container .center {
+    margin-top: 180px;
+    align-content: center;
+}
+
+.hero-container .center h1 {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 59px;
+    color: var(--dark-color);
+
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.center .card {
+	display: flex;
+	flex-direction: column;	
+	background: var(--light-color);
+	padding: 30px 50px;
+    box-shadow: 0px 4px 18px -4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    margin-bottom: 50px;
+    width: calc(1152px - (2*161px));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card div {
+	list-style-type: none;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    color: var(--text-color);
+}
+
+.card li {
+	display: block;
+    position: relative;
+    font-size: 14px;
+    padding-top: 15px;
+    
+}
+
+.card h2 {
+    font-family: "Roboto", sans-serif;
+    color: var(--text-color);
+	font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-container .card {
+    animation: fadeIn 800ms forwards;
+    opacity: 0;
+    animation-delay: 1200ms;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-container h1, h2{
+    animation: fadeToDown 800ms forwards cubic-bezier(0.22, 0.32, 0, 1.54);
+    opacity: 0;
+    animation-delay: 800ms;
+}
+
+@keyframes fadeToDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-container p {
+    animation: fadeToTop 1000ms forwards;
+    opacity: 0;
+    animation-delay: 1700ms;
+}
+
+@keyframes fadeToTop {
+    from {
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hasil .testlagi {
+    animation: fadeIn 1600ms forwards;
+    opacity: 0;
+    animation-delay: 1400ms;
+}
+
+input[type=submit] {
+    background: var(--blue-color);
+    color: var(--light-color);
+    padding: 11px 42px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 400ms;
+    display: inline-block;
+    border-radius: 26px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+
+/* Halaman buat test-page */
+.opsi-test {
+    display: flex;
+}
+.opsi-test .card{
+	background: var(--light-color);
+    box-shadow: 0px 4px 18px -4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.opsi-test .card p{
+    text-align: justify;
+}
+.opsi-test .card h5{
+    text-align: center;
+}
+
+
+/* Data Diri */
+.nama {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 65%;
+}
+
+.data-diri {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.data-diri .flex {
+	display: flex;
+    position: relative;
+}
+
+.data-diri li {
+    padding-right: 15px;
+    padding-top: 0px;
+    /* padding-bottom: 15px; */
+}
+
+.data-diri h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.center h3 {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 59px;
+    color: var(--dark-color);
+    text-align: center;
+}
+
+.center h3 {
+    animation: fadeIn 1000ms forwards cubic-bezier(0.22, 0.32, 0, 1.54);
+    opacity: 0;
+    animation-delay: 1600ms;
+}
+
+
+.btn-success {
+    border-radius: 24px;
+    padding: 11px 42px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 400ms;
+    display: inline-block;
+}
+
+.gambar-asd {
+    text-align: center;
+    display: block;
+    margin-bottom: 50px;
+
+    animation: fadeToTop 1000ms forwards;
+    opacity: 0;
+    animation-delay: 1700ms;
+}

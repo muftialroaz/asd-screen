@@ -1,0 +1,42 @@
+{% extends 'base.jinja' %}
+
+{% block title %}
+Image Test - ASD Screening
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='imgtest.css') }}">
+
+<script class="jsbin" type="text/javascript" src="{{url_for('static', filename='imgtest.js') }}"></script>
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<div class="center">
+    <div class="form">
+
+        <h1>Tes Foto Diagnosa Autisme</h1>
+
+        <form action="{{ url_for('site.result') }}" accept-charset="utf-8" method="post" enctype="multipart/form-data" >
+            <div class="file-upload">
+                <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Tambah Foto</button>
+                
+                <div class="image-upload-wrap">
+                    <input class="file-upload-input" id="image" name="image" type='file' onchange="readURL(this);" accept="image/*" required="" oninvalid="this.setCustomValidity('Silahkan upload foto')">
+                    <div class="drag-text">
+                        <h3>Drag dan drop foto<h3>
+                        </div>
+                    </div>
+
+                    <div class="file-upload-content">
+                        <img class="file-upload-image" src="#" alt="your image" />
+                        <div class="image-title-wrap">
+                            <button type="button" onclick="removeUpload()" class="remove-image">Hapus <span class="image-title">Uploaded Image</span></button>
+                        </div>
+                    </div>
+                </div>
+                <p><input class="btn" type="submit" name="btnSubmit" value="Lihat Hasilnya"></p>
+        </form>
+
+    </div>
+        
+</div>
+{% endblock %}

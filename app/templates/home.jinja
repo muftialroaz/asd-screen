@@ -1,0 +1,26 @@
+{% extends 'base.jinja' %}
+
+{% block title %}
+ASD Screening
+{% endblock %}
+
+{% block content %}
+
+<div class="home">
+    <div class="left">
+        <h1>Autism Spectrum
+            Disorder Screening</h1>
+        <p>Autism spectrum disorder (ASD) atau yang lebih sering disebut autisme merupakan
+            gangguan perkembangan saraf yang memengaruhi perkembangan bahasa
+            dan kemampuan seorang anak untuk berkomunikasi, berinteraksi, serta berperilaku.
+            Kenali gejala autisme pada anak dengan mengikuti test di bawah ini!</p>
+        <a href="{{ url_for('site.test_page') }}" class="btn">Ikuti Tes</a>
+        <a href="{{ url_for('site.about') }}" class="btn cyan">Tentang ASD</a>
+    </div>
+
+    <div class="right">
+        <img src="/static/img/HeroImage.png" alt="">
+    </div>
+</div>
+
+{% endblock %}

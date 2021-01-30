@@ -1,0 +1,88 @@
+{% extends 'base.jinja' %}
+
+{% block title %}
+Result - ASD Screening
+{% endblock %}
+
+{% block content %}
+
+<div class="center">
+    <div class="hasil">
+        <h1>Hasil Tes</h1>
+        {% if type == 'form' %}
+            <div class="card">
+                {# <div class="data"> #}
+                    <h3>Data Diri</h3>
+                    <div class="form-check">
+                        <div class="row">
+                            <div class="col-sm">
+                                <h2>Nama</h2>
+                                <h2 class="atas">Jenis Kelamin</h2>
+                                {# Kelompok Etnik #}
+                                <h2>Kelompok etnik</h2>
+                                {# Penyakit Kuning #}
+                                <h2>Pernah terkena penyakit kuning?</h2>
+                                {# Ada keluarga dengan ASD? #}
+                                <h2 class="atas">Ada keluarga dengan ASD?</h2>
+                                {# Kelompok assigner #}
+                                <h2>Assigner</h2>
+                                {# Penyakit Kuning #}
+                                <h2>Umur (bulan)</h2>
+                            </div>
+                            <div class="col-sm">
+                                <h2>{{ bio.name }}</h2>
+                                <h2>{{ bio.sex }}</h2>
+                                <h2>{{ bio.ethnicity }}</h2>
+                                <h2>{{ bio.jaundice }}</h2>
+                                <h2>{{ bio.family_mem_with_asd }}</h2>
+                                <h2>{{ bio.assigner }}</h2>
+                                <h2>{{ bio.age }}</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Kuesioner</h3>
+                    <div class="form-check">
+                        {% for item in qna %}
+                            <h2>{{ item.q }}</h2>
+                            <p>{{ item.a }}</p>
+                        {% endfor %}
+                    </div>
+
+                    <h3>Hasil</h3>
+                    <div class="form-check">
+                        {% if class_pred == 1 %}
+                            <h2 style="color:red">Anak Anda memiliki kemungkinan {{ '%0.2f'| format(confidence|float) }}% mengalami Autism Spectrum Disorder<h2>
+                            <h2>Kunjungi dokter Anda untuk diagnosis dan tindakan lebih lanjut</h2>
+                        {% else %}
+                            <h2 style="color:green">Anak Anda memiliki kemungkinan {{ '%0.2f'| format(confidence|float) }}% tidak mengalami Autism Spectrum Disorder<h2>
+                        {% endif %}
+                    </div>
+            </div>
+            {% else %}
+                <div class="card">
+                    <div class="form-check">
+                        <div class="col-sm">
+                            <img src="{{ url_for('static', filename='img/' + filename) }}"" width="500">
+                            {% if class_pred == 1 %}
+                                <h2 style="color:red">Anak Anda memiliki kemungkinan {{ '%0.2f'| format(confidence|float) }}% mengalami Autism Spectrum Disorder<h2>
+                                <h2>Kunjungi dokter Anda untuk diagnosis dan tindakan lebih lanjut</h2>
+                            {% else %}
+                                <h2 style="color:green">Anak Anda memiliki kemungkinan {{ '%0.2f'| format(confidence|float) }}% tidak mengalami Autism Spectrum Disorder<h2>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+        {% endif %}
+        <div class="testlagi">
+            {% if type == 'form' %}
+                <a href="{{ url_for('site.test_page') }}" class="btn btn-primary">Tes Lagi</a>
+            {% else %}
+                <a href="{{ url_for('site.test_page') }}" class="btn btn-primary">Tes Lagi</a>
+            {% endif %}
+        </div>
+        <div class="testlagi"></div>
+    </div>
+</div>
+
+{% endblock %}
