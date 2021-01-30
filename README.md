@@ -14,5 +14,3 @@ cc: http://asdtests.com/#
 ## How to use
 ##### Type "flask run" on the terminal 
 ##### or use PyCharm
-# asd-screen
-# asd-screen
