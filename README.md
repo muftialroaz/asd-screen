@@ -9,7 +9,11 @@ diklasifikasikan terkena gejala ASD atau tidak. Aplikasi kami juga akan menyajik
 seputar autism spectrum disorder yang diharapkan dapat menambah wawasan pembaca.
 
 cc: http://asdtests.com/#
+(clone of https://github.com/Sammy219/ASD-Screening)
 
+## Deployment link
+
+https://asd-screen.herokuapp.com
 
 ## How to use
 ##### Type "flask run" on the terminal 
