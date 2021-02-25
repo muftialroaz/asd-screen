@@ -8,8 +8,8 @@ mengalami ASD atau tidak. Pengguna dapat melakukan pengecekan dengan cara mengup
 diklasifikasikan terkena gejala ASD atau tidak. Aplikasi kami juga akan menyajikan artikel edukasi dan informasi
 seputar autism spectrum disorder yang diharapkan dapat menambah wawasan pembaca.
 
-cc: http://asdtests.com/#
-(clone of https://github.com/Sammy219/ASD-Screening)
+cc: http://asdtests.com/# <br>
+clone of https://github.com/Sammy219/ASD-Screening
 
 ## Deployment link
 
