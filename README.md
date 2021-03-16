@@ -8,13 +8,14 @@ mengalami ASD atau tidak. Pengguna dapat melakukan pengecekan dengan cara mengup
 diklasifikasikan terkena gejala ASD atau tidak. Aplikasi kami juga akan menyajikan artikel edukasi dan informasi
 seputar autism spectrum disorder yang diharapkan dapat menambah wawasan pembaca.
 
-cc: http://asdtests.com/# <br>
+cc: http://asdtests.com/ <br>
 clone of https://github.com/Sammy219/ASD-Screening
 
 ## Deployment link
-
 https://asd-screen.herokuapp.com
 
 ## How to use
-##### Type "flask run" on the terminal 
-##### or use PyCharm
+- Open file directory
+- Open the terminal
+- install dependencies "pip install requirements.txt"
+- run with "flask run" on the terminal
