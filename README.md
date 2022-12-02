@@ -12,7 +12,7 @@ cc: http://asdtests.com/ <br>
 clone of https://github.com/Sammy219/ASD-Screening
 
 ## Deployment link
-https://asd-screen.herokuapp.com
+https://web-production-fe11.up.railway.app/
 
 ## How to use
 - Open file directory
